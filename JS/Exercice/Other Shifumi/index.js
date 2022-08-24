@@ -1,11 +1,17 @@
 const contenantChoixOrdinateur = document.getElementById('choix-ordinateur');
 const contenantChoixUtilisateur = document.getElementById('choix-utilisateur');
 const contenantResultat = document.getElementById('resultat');
+const contenantScoreYou = document.getElementById('votreScore');
+const contenantScoreHim = document.getElementById('sonScore');
 
 const choixPossibles = document.querySelectorAll('button');
 let choixUtilisateur
 let resultat
 let choixOrdinateur
+
+let score = 0;
+let scoreYou = 0;
+let scoreIA = 0;
 
 //Event click sur les boutons
 choixPossibles.forEach(choixPossibles => choixPossibles.addEventListener('click', (e) => {
@@ -13,8 +19,8 @@ choixPossibles.forEach(choixPossibles => choixPossibles.addEventListener('click'
     choixUtilisateur = e.target.id;
     //on ajoute l'image qui correspond au choix
     contenantChoixUtilisateur.innerHTML = `<img src="${choixUtilisateur}.png">`
-    generer_choix_ordinateur()
-    verification()
+    generer_choix_ordinateur();
+    verification();
 }))
 
 
@@ -38,30 +44,40 @@ function generer_choix_ordinateur() {
 
 function verification() {
     if (choixUtilisateur == choixOrdinateur) {
-        resultat = "Egalite !";
+        resultat = "Execo Mec !";
     }
     //Les cas ou le joueur perd
     if (choixUtilisateur == "pierre" && choixOrdinateur == "papier") {
-        resultat = "Perdu !";
+        resultat = "Vous avez perdu !";
+        scoreIA++;
     }
 
     if (choixUtilisateur == "papier" && choixOrdinateur == "ciseaux") {
-        resultat = "Perdu !";
+        resultat = "Vous avez perdu !";
+        scoreIA++;
     }
     if (choixUtilisateur == "ciseaux" && choixOrdinateur == "pierre") {
-        resultat = "Perdu !";
+        resultat = "Vous avez perdu !";
+        scoreIA++;
     }
     // Les cas ou le joueur gagne
     if (choixUtilisateur == "pierre" && choixOrdinateur == "ciseaux") {
-        resultat = "Gagné !";
+        resultat = "Vous avez gagné !";
+        scoreYou++;
     }
 
     if (choixUtilisateur == "papier" && choixOrdinateur == "pierre") {
-        resultat = "Gagné !";
+        resultat = "Vous avez gagné !";
+        scoreYou++;
     }
     if (choixUtilisateur == "ciseaux" && choixOrdinateur == "papier") {
-        resultat = "Gagné !";
+        resultat = "Vous avez gagné !";
+        scoreYou++;
     }
+
+    contenantResultat.innerHTML = resultat;
+    contenantScoreHim.innerHTML = "Him : " + scoreIA;
+    contenantScoreYou.innerHTML = "You : " + scoreYou;
 
 
 }

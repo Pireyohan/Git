@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
     margin: 0;
@@ -21,6 +21,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
     width: 400px;
     background-color: white;
     padding: 25px;
@@ -29,7 +30,7 @@ section {
 }
 
 .choix {
-
+    margin-top: 30px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -50,7 +51,7 @@ img {
 }
 
 button {
-    padding:  5px 30px;
+    padding: 5px 30px;
     margin-top: 20px;
     border: 2px solid #5372f0;
     background-color: #5372f0;
@@ -60,8 +61,36 @@ button {
     text-transform: capitalize;
 
 }
+
 button:focus {
     background-color: #fff;
-    color:#5372f0;
+    color: #5372f0;
+
+}
+
+#votreScore {
+    padding: 5px 30px;
+    margin-top: 20px;
+    border: 2px solid #5372f0;
+    background-color: #5372f0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: capitalize;
+
+}
+
+
+#sonScore {
+    padding: 5px 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: 2px solid #5372f0;
+    background-color: #5372f0;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    text-transform: capitalize;
+
 
 }
