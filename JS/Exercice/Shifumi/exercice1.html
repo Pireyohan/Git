@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ex1.css">
+    <link rel="script" href="exercice1.js">
+</head>
+
+<body>
+    <div class="box">
+        <button>Pierre</button>
+        <button>Feuilles</button>
+        <button>Ciseaux</button>
+    </div>
+
+    <div class="resultat"></div>
+    <script>
+        const buttons = document.querySelectorAll("button");
+        // const resultat = document.querySelector(".resultat");
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function () {
+                const joueur = buttons[i].innerHTML;
+                const robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
+                let resultat = "";
+                // resultat.innerHTML = joueur + "       " + robot;
+                if (joueur === robot) {
+                    resultat = "Egalité";
+                }
+                else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Ciseaux" && robot === "Feuilles") || (joueur === "Feuilles") && (robot === "Pierre")) {
+                    resultat = "Gagné";
+                }
+                else {
+                    resultat = "Perdu";
+                }
+                document.querySelector(".resultat").innerHTML = `
+  Joueur : ${joueur} </br>
+  Robot : ${robot} <br/>
+  Résultat : ${resultat}
+`  ;
+
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>

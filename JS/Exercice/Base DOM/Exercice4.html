@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice4</title>
+</head>
+
+<body>
+    <script>
+        //         document.head.insertAdjacentHTML('beforeBegin', `<style>
+        // p.error {
+        // color: red;
+        // }
+        // </style>`)
+        //         document.body.insertAdjacentHTML('beforeBegin', `<p>This is a paragraph.</p>
+        // <p>This is a paragraph.</p>
+        // <p class="error">I am different.</p>
+        // <p>This is a paragraph.</p>
+        // <p class="error">I am different too.</p>`)
+        const style = document.createElement("style");
+        style.innerText = "p.error {color: red; }";
+
+        document.head.appendChild(style);
+
+        const p = document.createElement("p");
+        p.innerText = "This is a para";
+        const p2 = document.createElement("p");
+        p2.innerText = "This is a para";
+        const p3 = document.createElement("p");
+        p3.innerText = "This is an error";
+
+        p3.classList.add("error");
+
+
+
+        document.body.appendChild(p);
+        document.body.appendChild(p2);
+        document.body.appendChild(p3);
+
+    </script>
+</body>
+
+</html>
