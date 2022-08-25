@@ -3,8 +3,9 @@ const contenantChoixUtilisateur = document.getElementById('choix-utilisateur');
 const contenantResultat = document.getElementById('resultat');
 const contenantScoreYou = document.getElementById('votreScore');
 const contenantScoreHim = document.getElementById('sonScore');
-
 const choixPossibles = document.querySelectorAll('button');
+const gifVictory = document.getElementById('gif');
+
 let choixUtilisateur
 let resultat
 let choixOrdinateur
@@ -21,6 +22,7 @@ choixPossibles.forEach(choixPossibles => choixPossibles.addEventListener('click'
     contenantChoixUtilisateur.innerHTML = `<img src="${choixUtilisateur}.png">`
     generer_choix_ordinateur();
     verification();
+    victory();
 }))
 
 
@@ -50,34 +52,54 @@ function verification() {
     if (choixUtilisateur == "pierre" && choixOrdinateur == "papier") {
         resultat = "Vous avez perdu !";
         scoreIA++;
+        if (scoreYou > 0)
+            scoreYou--;
     }
 
     if (choixUtilisateur == "papier" && choixOrdinateur == "ciseaux") {
         resultat = "Vous avez perdu !";
         scoreIA++;
+        if (scoreYou > 0)
+            scoreYou--;
     }
     if (choixUtilisateur == "ciseaux" && choixOrdinateur == "pierre") {
         resultat = "Vous avez perdu !";
         scoreIA++;
+        if (scoreYou > 0)
+            scoreYou--;
     }
     // Les cas ou le joueur gagne
     if (choixUtilisateur == "pierre" && choixOrdinateur == "ciseaux") {
         resultat = "Vous avez gagné !";
         scoreYou++;
+        if (scoreIA > 0)
+            scoreIA--;
     }
 
     if (choixUtilisateur == "papier" && choixOrdinateur == "pierre") {
         resultat = "Vous avez gagné !";
         scoreYou++;
+        if (scoreIA > 0)
+            scoreIA--;
     }
     if (choixUtilisateur == "ciseaux" && choixOrdinateur == "papier") {
         resultat = "Vous avez gagné !";
         scoreYou++;
+        if (scoreIA > 0)
+            scoreIA--;
     }
-
     contenantResultat.innerHTML = resultat;
     contenantScoreHim.innerHTML = "Him : " + scoreIA;
     contenantScoreYou.innerHTML = "You : " + scoreYou;
+}
+
+function victory() {
+    if (scoreIA == 5 || scoreYou == 5) {
+
+        {
+            document.getElementById('gif').innerHTML = "<img src='Feu_dartifice.gif' >";
+        }
 
 
+    }
 }
