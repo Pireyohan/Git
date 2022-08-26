@@ -19,10 +19,11 @@ choixPossibles.forEach(choixPossibles => choixPossibles.addEventListener('click'
     //recuperation de l'ID du bouton cliqué
     choixUtilisateur = e.target.id;
     //on ajoute l'image qui correspond au choix
-    contenantChoixUtilisateur.innerHTML = `<img src="${choixUtilisateur}.png">`
+    contenantChoixUtilisateur.innerHTML = `<img src="image/${choixUtilisateur}.png">`
     generer_choix_ordinateur();
     verification();
     victory();
+
 }))
 
 
@@ -39,7 +40,7 @@ function generer_choix_ordinateur() {
         choixOrdinateur = "ciseaux"
     }
     //on ajoute l'image qui correspond au choix
-    contenantChoixOrdinateur.innerHTML = `<img src="${choixOrdinateur}.png">`
+    contenantChoixOrdinateur.innerHTML = `<img src="image/${choixOrdinateur}.png">`
 }
 
 //Fonction pour vérifier si le joueur a gagné or not
@@ -97,7 +98,7 @@ function victory() {
     if (scoreIA == 5 || scoreYou == 5) {
 
         {
-            document.getElementById('gif').innerHTML = "<img src='Feu_dartifice.gif' >";
+            document.getElementById('gif').innerHTML = "<img src='image/Feu_dartifice.gif' >";
         }
 
 

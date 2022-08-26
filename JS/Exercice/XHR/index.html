@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="items">
+
+    </div>
+    <!--  
+    <a onclick="load()" href="#">Charger!</a>
+    <a onclick="load('http://data.snx.ovh/page1.json')" href="#">Categorie 1!</a>
+    <a onclick="load('http://data.snx.ovh/page2.json')" href="#">Categorie 2 !</a>-->
+    <a onclick="return load(this.href)" href="http://data.snx.ovh/page1.json">Categorie 1 !</a>-->
+    <a onclick="return load(this.href)" href="http://data.snx.ovh/page2.json">Categorie 2 !</a>-->
+    <script>
+        function load(url) {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                const items = document.getElementById('items');
+                //items.innerHTML = this.responseText;
+                let json = JSON.parse(this.responseText);
+                console.log(json);
+
+
+            }
+            //xhr.open("GET", "./page.html");
+            //xhr.open("GET", "http://data.snx.ovh/page1.json");
+            xhr.open("GET", url);
+            xhr.send();
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

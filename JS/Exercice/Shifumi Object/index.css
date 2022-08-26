@@ -1,0 +1,51 @@
+button.PFC_btn {
+    padding: 0;
+    cursor: pointer;
+    border: 5px solid lightgrey;
+}
+
+button.PFC_btn:hover {
+    border-color: green;
+}
+
+button.PFC_btn img {
+    display: block;
+    width: 160px;
+    height: 120px;
+    border: 0;
+}
+
+button.PFC_btn_replay {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.equal {
+    color: blue;
+}
+
+.win {
+    color: green;
+    font-weight: bold;
+}
+
+.lose {
+    color: red;
+}
+
+#PFC_result h4 {
+    font-weight: normal;
+}
+
+#PFC_result img {
+    width: 100px;
+    border: 2px solid lightgrey;
+}
+
+#PFC_result img.win {
+    border: 2px solid green;
+}
+
+#PFC_result img.lose {
+    border: 2px solid red;
+}

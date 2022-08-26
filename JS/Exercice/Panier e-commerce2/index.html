@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Panier de produit !</title>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="http://data.snx.ovh/page1.json" onclick="return load(this.href)">Catégorie 1</a></li>
+                <li><a href="http://data.snx.ovh/page2.json" onclick="return load(this.href)">Catégorie 2</a></li>
+            </ul>
+        </nav>
+        <div id="items">
+        </div>
+        
+        <p>
+            Montant total : <span id="total">0</span>€
+        </p>
+        <script src="js/panier.js"></script>
+    </body>
+</html>
