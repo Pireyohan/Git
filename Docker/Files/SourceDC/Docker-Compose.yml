@@ -1,0 +1,27 @@
+version: "3.7" 
+
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - db-volume:/var/lib/mysql
+      - ./articles.sql:/docker-entrypoint-initdb.d/articles.sql
+    container_name: mysql_c
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+    ports:
+      - 9906:3306
+  web:
+    image: docker_demophp_image
+    container_name: PHP_WEB
+    depends_on:
+      - mysql
+    volumes:
+      - ./app:/var/www/html/
+    ports:
+      - 8080:80
+volumes:
+  db-volume:

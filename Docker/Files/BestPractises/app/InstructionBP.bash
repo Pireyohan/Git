@@ -138,4 +138,11 @@ MSYS_NO_PATHCONV=1 docker run --name=todo_app_container --rm -dp 3000:3000 \
 #RE-vérification de la modification de l'app => les données sont tjs présentes
 http://localhost:3000
 
+#Création d'un fichier compose a la racine d'app
+Docker-compose-yml
+
+#Démarrage de notre application en multiContainer
+docker compose up -d
+
+
 
